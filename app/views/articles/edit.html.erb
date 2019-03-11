@@ -1,2 +1,7 @@
-<h1>Articles#edit</h1>
-<p>Find me in app/views/articles/edit.html.erb</p>
+<h1>論文編集</h1>
+<%= form_with model: @article, local: true do |form| %>
+  <%= form.label "論文タイトル" %><br>
+  <%= form.text_field :title %><br>
+  <%= form.label "本文" %><br>
+  <%= form.text_area :body %>
+<% end %>
