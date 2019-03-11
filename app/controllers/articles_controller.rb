@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params # ストロングパラメータを定義
-    params.require(:post).permit(:title, :body)
+    params.require(:article).permit(:title, :body)
   end
 
 end
