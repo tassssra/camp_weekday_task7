@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
     @articles = Article.all # 記事一覧用
@@ -6,7 +7,6 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
   end
 
   def new
@@ -20,19 +20,27 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+    redirect_to @article
   end
 
   def update
+    @article.update(article_params)
+    redirect_to @article
   end
 
   def destroy
+    @article.destroy
+    redirect_to articles_path
   end
 
   private
 
   def article_params # ストロングパラメータを定義
     params.require(:article).permit(:title, :body)
+  end
+
+  def set_article
+    @article = Article.find(params[:id])
   end
 
 end
