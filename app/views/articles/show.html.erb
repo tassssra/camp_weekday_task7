@@ -1,6 +1,10 @@
-<h1>論文詳細</h1>
-<p>タイトル:<%= @article.title %></p>
-<p>本文:<%= @article.body %></p>
-<%= link_to "一覧へ戻る", articles_path(@article) %>
-<%= link_to "編集", edit_article_path(@article) %>
-<%= link_to "削除", article_path(@article), method: :delete %>
+<div>
+  <h1>論文詳細</h1>
+  <p>タイトル:<%= @article.title %></p>
+  <p><%= @article.body %></p>
+</div>
+<div>
+  <%= link_to "一覧へ戻る", articles_path %>
+  <%= link_to "編集", edit_article_path %>
+  <%= link_to "削除", article_path, method: :delete, data: {confirm: '削除してよろしいですか？'} %>
+</div>

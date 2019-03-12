@@ -20,7 +20,6 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    redirect_to @article
   end
 
   def update
