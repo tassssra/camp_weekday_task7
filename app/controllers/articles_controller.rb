@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
 
   def index
+    @articles = Article.all # 記事一覧用
+    @new_articles = Article.all # 最新記事用
   end
 
   def show
