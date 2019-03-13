@@ -4,9 +4,11 @@
     <%= form.label "論文タイトル" %><br>
     <%= form.text_field :title %>
   </div>
+
   <div>
     <%= form.label "本文" %><br>
     <%= form.text_area :body %>
   </div>
-  <p><%= form.submit "投稿" %></p>
+
+  <%= form.submit "投稿" %>
 <% end %>
