@@ -1,9 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-
   def index
     @articles = Article.all # 記事一覧用
-    @new_articles = Article.all # 最新記事用
   end
 
   def show
@@ -13,13 +11,13 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def edit
+  end
+
   def create
     @article = Article.new(article_params) # ストロングパラメータを引数に
     @article.save # データベースに保存
     redirect_to @article # showページにリダイレクト(転送)
-  end
-
-  def edit
   end
 
   def update
@@ -41,5 +39,4 @@ class ArticlesController < ApplicationController
   def set_article
     @article = Article.find(params[:id])
   end
-
 end
