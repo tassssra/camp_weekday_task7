@@ -32,11 +32,11 @@ class ArticlesController < ApplicationController
 
   private
 
-  def article_params # ストロングパラメータを定義
-    params.require(:article).permit(:title, :body)
-  end
+    def article_params # ストロングパラメータを定義
+      params.require(:article).permit(:title, :body)
+    end
 
-  def set_article
-    @article = Article.find(params[:id])
-  end
+    def set_article
+      @article = Article.find(params[:id])
+    end
 end
